@@ -57,7 +57,16 @@
                                     block:^(PFUser *user, NSError *error) {
                                         if(user)
                                         {
-                                            NSLog(@"login success");
+                                            PFUser *curUser = [PFUser currentUser];
+                                            NSString *roomID = [curUser valueForKey:@"roomID"];
+                                            if(roomID.length == 0)
+                                            {
+                                                [self performSegueWithIdentifier:@"segueFromLoginViewToChooseRoomView" sender:self];
+                                            }else
+                                            {
+                                                NSLog(@"login success");
+                                            }
+                                        
                                         }else
                                         {
                                             NSLog(@"login failed");
