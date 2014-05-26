@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2101C1F19319CAC00623298 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2101C1E19319CAC00623298 /* SignUpViewController.m */; };
 		B244C0BA19305B9D002F65F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0B919305B9D002F65F0 /* Foundation.framework */; };
 		B244C0BC19305B9D002F65F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */; };
 		B244C0BE19305B9D002F65F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BD19305B9D002F65F0 /* UIKit.framework */; };
@@ -21,6 +22,18 @@
 		B244C0DB19305B9D002F65F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BD19305B9D002F65F0 /* UIKit.framework */; };
 		B244C0E319305B9D002F65F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B244C0E119305B9D002F65F0 /* InfoPlist.strings */; };
 		B244C0E519305B9D002F65F0 /* RoommatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B244C0E419305B9D002F65F0 /* RoommatesTests.m */; };
+		B244C0EF19305BB9002F65F0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0EE19305BB9002F65F0 /* Parse.framework */; };
+		B244C0F119305BF2002F65F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F019305BF2002F65F0 /* AudioToolbox.framework */; };
+		B244C0F319305BF9002F65F0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F219305BF9002F65F0 /* CFNetwork.framework */; };
+		B244C0F519305C08002F65F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F419305C08002F65F0 /* CoreLocation.framework */; };
+		B244C0F719305C0F002F65F0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F619305C0F002F65F0 /* libz.dylib */; };
+		B244C0F919305C16002F65F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F819305C16002F65F0 /* MobileCoreServices.framework */; };
+		B244C0FB19305C1C002F65F0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0FA19305C1C002F65F0 /* QuartzCore.framework */; };
+		B244C0FD19305C23002F65F0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0FC19305C23002F65F0 /* Security.framework */; };
+		B244C0FF19305C2D002F65F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0FE19305C2D002F65F0 /* StoreKit.framework */; };
+		B244C10119305C36002F65F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C10019305C36002F65F0 /* SystemConfiguration.framework */; };
+		B244C10619305F90002F65F0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B244C10519305F90002F65F0 /* LoginViewController.m */; };
+		B2B124A019316907004552E6 /* InsetsTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B1249F19316907004552E6 /* InsetsTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2101C1D19319CAC00623298 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		B2101C1E19319CAC00623298 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		B244C0B619305B9D002F65F0 /* Roommates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roommates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B244C0B919305B9D002F65F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +68,20 @@
 		B244C0E019305B9D002F65F0 /* RoommatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoommatesTests-Info.plist"; sourceTree = "<group>"; };
 		B244C0E219305B9D002F65F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B244C0E419305B9D002F65F0 /* RoommatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoommatesTests.m; sourceTree = "<group>"; };
+		B244C0EE19305BB9002F65F0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B244C0F019305BF2002F65F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B244C0F219305BF9002F65F0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B244C0F419305C08002F65F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B244C0F619305C0F002F65F0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B244C0F819305C16002F65F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B244C0FA19305C1C002F65F0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B244C0FC19305C23002F65F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B244C0FE19305C2D002F65F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B244C10019305C36002F65F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B244C10419305F90002F65F0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B244C10519305F90002F65F0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B2B1249E19316907004552E6 /* InsetsTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InsetsTextField.h; path = Views/InsetsTextField.h; sourceTree = "<group>"; };
+		B2B1249F19316907004552E6 /* InsetsTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InsetsTextField.m; path = Views/InsetsTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +89,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B244C10119305C36002F65F0 /* SystemConfiguration.framework in Frameworks */,
+				B244C0FF19305C2D002F65F0 /* StoreKit.framework in Frameworks */,
+				B244C0FD19305C23002F65F0 /* Security.framework in Frameworks */,
+				B244C0FB19305C1C002F65F0 /* QuartzCore.framework in Frameworks */,
+				B244C0F919305C16002F65F0 /* MobileCoreServices.framework in Frameworks */,
+				B244C0F719305C0F002F65F0 /* libz.dylib in Frameworks */,
+				B244C0F519305C08002F65F0 /* CoreLocation.framework in Frameworks */,
 				B244C0BC19305B9D002F65F0 /* CoreGraphics.framework in Frameworks */,
+				B244C0F319305BF9002F65F0 /* CFNetwork.framework in Frameworks */,
+				B244C0F119305BF2002F65F0 /* AudioToolbox.framework in Frameworks */,
 				B244C0BE19305B9D002F65F0 /* UIKit.framework in Frameworks */,
+				B244C0EF19305BB9002F65F0 /* Parse.framework in Frameworks */,
 				B244C0BA19305B9D002F65F0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +140,16 @@
 		B244C0B819305B9D002F65F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B244C10019305C36002F65F0 /* SystemConfiguration.framework */,
+				B244C0FE19305C2D002F65F0 /* StoreKit.framework */,
+				B244C0FC19305C23002F65F0 /* Security.framework */,
+				B244C0FA19305C1C002F65F0 /* QuartzCore.framework */,
+				B244C0F819305C16002F65F0 /* MobileCoreServices.framework */,
+				B244C0F619305C0F002F65F0 /* libz.dylib */,
+				B244C0F419305C08002F65F0 /* CoreLocation.framework */,
+				B244C0F219305BF9002F65F0 /* CFNetwork.framework */,
+				B244C0F019305BF2002F65F0 /* AudioToolbox.framework */,
+				B244C0EE19305BB9002F65F0 /* Parse.framework */,
 				B244C0B919305B9D002F65F0 /* Foundation.framework */,
 				B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */,
 				B244C0BD19305B9D002F65F0 /* UIKit.framework */,
@@ -112,12 +161,14 @@
 		B244C0BF19305B9D002F65F0 /* Roommates */ = {
 			isa = PBXGroup;
 			children = (
-				B244C0C819305B9D002F65F0 /* AppDelegate.h */,
-				B244C0C919305B9D002F65F0 /* AppDelegate.m */,
 				B244C0CB19305B9D002F65F0 /* Main.storyboard */,
 				B244C0CE19305B9D002F65F0 /* ViewController.h */,
 				B244C0CF19305B9D002F65F0 /* ViewController.m */,
-				B244C0D119305B9D002F65F0 /* Images.xcassets */,
+				B244C10419305F90002F65F0 /* LoginViewController.h */,
+				B244C10519305F90002F65F0 /* LoginViewController.m */,
+				B2101C1D19319CAC00623298 /* SignUpViewController.h */,
+				B2101C1E19319CAC00623298 /* SignUpViewController.m */,
+				B2B1249D193168AE004552E6 /* Views */,
 				B244C0C019305B9D002F65F0 /* Supporting Files */,
 			);
 			path = Roommates;
@@ -126,6 +177,9 @@
 		B244C0C019305B9D002F65F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B244C0D119305B9D002F65F0 /* Images.xcassets */,
+				B244C0C819305B9D002F65F0 /* AppDelegate.h */,
+				B244C0C919305B9D002F65F0 /* AppDelegate.m */,
 				B244C0C119305B9D002F65F0 /* Roommates-Info.plist */,
 				B244C0C219305B9D002F65F0 /* InfoPlist.strings */,
 				B244C0C519305B9D002F65F0 /* main.m */,
@@ -150,6 +204,15 @@
 				B244C0E119305B9D002F65F0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2B1249D193168AE004552E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2B1249E19316907004552E6 /* InsetsTextField.h */,
+				B2B1249F19316907004552E6 /* InsetsTextField.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B244C10619305F90002F65F0 /* LoginViewController.m in Sources */,
 				B244C0D019305B9D002F65F0 /* ViewController.m in Sources */,
+				B2101C1F19319CAC00623298 /* SignUpViewController.m in Sources */,
 				B244C0CA19305B9D002F65F0 /* AppDelegate.m in Sources */,
 				B244C0C619305B9D002F65F0 /* main.m in Sources */,
+				B2B124A019316907004552E6 /* InsetsTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +442,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roommates/Roommates-Prefix.pch";
 				INFOPLIST_FILE = "Roommates/Roommates-Info.plist";
@@ -389,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roommates/Roommates-Prefix.pch";
 				INFOPLIST_FILE = "Roommates/Roommates-Info.plist";
@@ -456,6 +530,7 @@
 				B244C0EA19305B9D002F65F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B244C0EB19305B9D002F65F0 /* Build configuration list for PBXNativeTarget "RoommatesTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +539,7 @@
 				B244C0ED19305B9D002F65F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
