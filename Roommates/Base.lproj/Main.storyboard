@@ -107,6 +107,34 @@
             </objects>
             <point key="canvasLocation" x="490" y="-584"/>
         </scene>
+        <!--Choose School View Controller-->
+        <scene sceneID="Hcs-qo-9hm">
+            <objects>
+                <viewController id="aPS-82-r3E" customClass="ChooseSchoolViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L2T-QE-oy3"/>
+                        <viewControllerLayoutGuide type="bottom" id="P8Z-Tm-j4z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iky-7Z-VbK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Tez-J2-YHg">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tv_chooseSchool" destination="Tez-J2-YHg" id="bWP-BE-6Ml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJr-7D-x9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="155"/>
+        </scene>
         <!--Choose Room View Controller-->
         <scene sceneID="Dn1-8P-E0C">
             <objects>
@@ -120,6 +148,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="aPS-82-r3E" kind="modal" identifier="toSelectSchool" id="Jbl-J3-jkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdK-Ip-TEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

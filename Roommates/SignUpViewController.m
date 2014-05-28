@@ -14,10 +14,10 @@
 @property (strong, nonatomic) UIView *v_loginInfo;
 @property (strong, nonatomic) UIView *v_loginInfoInput;
 
-@property (strong, nonatomic) UITextField *tv_username;
-@property (strong, nonatomic) UITextField *tv_password;
-@property (strong, nonatomic) UITextField *tv_passwordConfirm;
-@property (strong, nonatomic) UITextField *tv_email;
+@property (strong, nonatomic) UITextField *tf_username;
+@property (strong, nonatomic) UITextField *tf_password;
+@property (strong, nonatomic) UITextField *tf_passwordConfirm;
+@property (strong, nonatomic) UITextField *tf_email;
 
 @end
 
@@ -65,85 +65,86 @@
     [signUpBtn addTarget:self action:@selector(clickSignUpButton) forControlEvents:UIControlEventTouchUpInside];
     [self.v_loginInfoInput addSubview:signUpBtn];
     
-    self.tv_username = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 26.0, 204.0, 28.0)];
-    self.tv_username.borderStyle = UITextBorderStyleNone;
-    self.tv_username.backgroundColor = [UIColor whiteColor];
-    self.tv_username.placeholder = @"用户名";
-    self.tv_username.returnKeyType = UIReturnKeyNext;
-    self.tv_username.font = [UIFont systemFontOfSize:12.0];
-    self.tv_username.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.tf_username = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 26.0, 204.0, 28.0)];
+    self.tf_username.borderStyle = UITextBorderStyleNone;
+    self.tf_username.backgroundColor = [UIColor whiteColor];
+    self.tf_username.placeholder = @"用户名";
+    self.tf_username.returnKeyType = UIReturnKeyNext;
+    self.tf_username.font = [UIFont systemFontOfSize:12.0];
+    self.tf_username.autocapitalizationType = UITextAutocapitalizationTypeNone;
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
-    self.tv_username.leftView = view1;
-    self.tv_username.leftViewMode = UITextFieldViewModeAlways;
-    self.tv_username.leftView.userInteractionEnabled = NO;
-    self.tv_username.delegate = self;
-    [self.v_loginInfoInput addSubview:self.tv_username];
+    self.tf_username.leftView = view1;
+    self.tf_username.leftViewMode = UITextFieldViewModeAlways;
+    self.tf_username.leftView.userInteractionEnabled = NO;
+    self.tf_username.delegate = self;
+    [self.v_loginInfoInput addSubview:self.tf_username];
     
-    self.tv_password = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 72.0, 204.0, 28.0)];
-    self.tv_password.borderStyle = UITextBorderStyleNone;
-    self.tv_password.backgroundColor = [UIColor whiteColor];
-    self.tv_password.placeholder = @"密码";
-    self.tv_password.returnKeyType = UIReturnKeyNext;
-    self.tv_password.font = [UIFont systemFontOfSize:12.0];
-    self.tv_password.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.tv_password.secureTextEntry = YES;
+    self.tf_password = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 72.0, 204.0, 28.0)];
+    self.tf_password.borderStyle = UITextBorderStyleNone;
+    self.tf_password.backgroundColor = [UIColor whiteColor];
+    self.tf_password.placeholder = @"密码";
+    self.tf_password.returnKeyType = UIReturnKeyNext;
+    self.tf_password.font = [UIFont systemFontOfSize:12.0];
+    self.tf_password.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.tf_password.secureTextEntry = YES;
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
-    self.tv_password.leftView = view2;
-    self.tv_password.leftViewMode = UITextFieldViewModeAlways;
-    self.tv_password.leftView.userInteractionEnabled = NO;
-    self.tv_password.delegate = self;
-    [self.v_loginInfoInput addSubview:self.tv_password];
+    self.tf_password.leftView = view2;
+    self.tf_password.leftViewMode = UITextFieldViewModeAlways;
+    self.tf_password.leftView.userInteractionEnabled = NO;
+    self.tf_password.delegate = self;
+    [self.v_loginInfoInput addSubview:self.tf_password];
     
-    self.tv_passwordConfirm = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 118.0, 204.0, 28.0)];
-    self.tv_passwordConfirm.borderStyle = UITextBorderStyleNone;
-    self.tv_passwordConfirm.backgroundColor = [UIColor whiteColor];
-    self.tv_passwordConfirm.placeholder = @"确认密码";
-    self.tv_passwordConfirm.returnKeyType = UIReturnKeyNext;
-    self.tv_passwordConfirm.font = [UIFont systemFontOfSize:12.0];
-    self.tv_passwordConfirm.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    self.tv_passwordConfirm.secureTextEntry = YES;
+    self.tf_passwordConfirm = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 118.0, 204.0, 28.0)];
+    self.tf_passwordConfirm.borderStyle = UITextBorderStyleNone;
+    self.tf_passwordConfirm.backgroundColor = [UIColor whiteColor];
+    self.tf_passwordConfirm.placeholder = @"确认密码";
+    self.tf_passwordConfirm.returnKeyType = UIReturnKeyNext;
+    self.tf_passwordConfirm.font = [UIFont systemFontOfSize:12.0];
+    self.tf_passwordConfirm.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.tf_passwordConfirm.secureTextEntry = YES;
     UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
-    self.tv_passwordConfirm.leftView = view3;
-    self.tv_passwordConfirm.leftViewMode = UITextFieldViewModeAlways;
-    self.tv_passwordConfirm.leftView.userInteractionEnabled = NO;
-    self.tv_passwordConfirm.delegate = self;
-    [self.v_loginInfoInput addSubview:self.tv_passwordConfirm];
+    self.tf_passwordConfirm.leftView = view3;
+    self.tf_passwordConfirm.leftViewMode = UITextFieldViewModeAlways;
+    self.tf_passwordConfirm.leftView.userInteractionEnabled = NO;
+    self.tf_passwordConfirm.delegate = self;
+    [self.v_loginInfoInput addSubview:self.tf_passwordConfirm];
     
-    self.tv_email = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 164.0, 204.0, 28.0)];
-    self.tv_email.borderStyle = UITextBorderStyleNone;
-    self.tv_email.backgroundColor = [UIColor whiteColor];
-    self.tv_email.placeholder = @"邮箱";
-    self.tv_email.keyboardType = UIKeyboardTypeEmailAddress;
-    self.tv_email.returnKeyType = UIReturnKeyDone;
-    self.tv_email.font = [UIFont systemFontOfSize:12.0];
-    self.tv_email.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.tf_email = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 164.0, 204.0, 28.0)];
+    self.tf_email.borderStyle = UITextBorderStyleNone;
+    self.tf_email.backgroundColor = [UIColor whiteColor];
+    self.tf_email.placeholder = @"邮箱";
+    self.tf_email.keyboardType = UIKeyboardTypeEmailAddress;
+    self.tf_email.returnKeyType = UIReturnKeyDone;
+    self.tf_email.font = [UIFont systemFontOfSize:12.0];
+    self.tf_email.autocapitalizationType = UITextAutocapitalizationTypeNone;
     UIView *view4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
-    self.tv_email.leftView = view4;
-    self.tv_email.leftViewMode = UITextFieldViewModeAlways;
-    self.tv_email.leftView.userInteractionEnabled = NO;
-    self.tv_email.delegate = self;
-    [self.v_loginInfoInput addSubview:self.tv_email];
+    self.tf_email.leftView = view4;
+    self.tf_email.leftViewMode = UITextFieldViewModeAlways;
+    self.tf_email.leftView.userInteractionEnabled = NO;
+    self.tf_email.delegate = self;
+    [self.v_loginInfoInput addSubview:self.tf_email];
 }
 
 - (void)clickSignUpButton
 {
     NSLog(@"signUp");
     
-    if(self.tv_username.text.length != 0 && self.tv_password.text.length != 0 && self.tv_passwordConfirm.text.length != 0
-       && self.tv_email.text.length != 0 )
+    if(self.tf_username.text.length != 0 && self.tf_password.text.length != 0 && self.tf_passwordConfirm.text.length != 0
+       && self.tf_email.text.length != 0 )
     {
-        if([self.tv_password.text isEqualToString:self.tv_passwordConfirm.text])
+        if([self.tf_password.text isEqualToString:self.tf_passwordConfirm.text])
         {
             PFUser *newUser = [PFUser user];
-            newUser.username = self.tv_username.text;
-            newUser.password = self.tv_password.text;
-            newUser.email = self.tv_email.text;
+            newUser.username = self.tf_username.text;
+            newUser.password = self.tf_password.text;
+            newUser.email = self.tf_email.text;
             
             
             [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                                     if(!error)
                                                     {
                                                         NSLog(@"注册成功");
+                                                        [self dismissViewControllerAnimated:YES completion:nil];
                                                     }else
                                                     {
                                                         NSString *errorString = [error userInfo][@"error"];
@@ -207,10 +208,10 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     //hide keyboard
-    [self.tv_username resignFirstResponder];
-    [self.tv_password resignFirstResponder];
-    [self.tv_passwordConfirm resignFirstResponder];
-    [self.tv_email resignFirstResponder];
+    [self.tf_username resignFirstResponder];
+    [self.tf_password resignFirstResponder];
+    [self.tf_passwordConfirm resignFirstResponder];
+    [self.tf_email resignFirstResponder];
     
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
@@ -241,18 +242,18 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if(textField == self.tv_username)
+    if(textField == self.tf_username)
     {
-        [self.tv_password becomeFirstResponder];
-    }else if(textField == self.tv_password)
+        [self.tf_password becomeFirstResponder];
+    }else if(textField == self.tf_password)
     {
-        [self.tv_passwordConfirm becomeFirstResponder];
-    }else if(textField == self.tv_passwordConfirm)
+        [self.tf_passwordConfirm becomeFirstResponder];
+    }else if(textField == self.tf_passwordConfirm)
     {
-        [self.tv_email becomeFirstResponder];
-    }else if(textField == self.tv_email)
+        [self.tf_email becomeFirstResponder];
+    }else if(textField == self.tf_email)
     {
-        [self.tv_email resignFirstResponder];
+        [self.tf_email resignFirstResponder];
         
         NSTimeInterval animationDuration = 0.30f;
         [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
