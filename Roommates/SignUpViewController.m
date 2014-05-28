@@ -36,7 +36,7 @@
     
     [self setLoginInfoInputView];
     
-    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 530, 160, 22)];
+    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 500, 160, 22)];
     cancelBtn.backgroundColor = [UIColor colorWithRed:233.0/255.0 green:151.0/255.0 blue:29.0/255.0 alpha:1.0];
     [cancelBtn setTitle:@"取    消" forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
