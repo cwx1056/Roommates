@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fky-Rl-pEN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -134,7 +134,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJr-7D-x9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="155"/>
+            <point key="canvasLocation" x="1051" y="-297"/>
+        </scene>
+        <!--Choose Building View Controller-->
+        <scene sceneID="ROg-x6-sNc">
+            <objects>
+                <viewController id="GZx-Lk-KJT" customClass="ChooseBuildingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="40V-lP-4hD"/>
+                        <viewControllerLayoutGuide type="bottom" id="XKh-hg-0m3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uh1-Zb-b6M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VXv-3e-Uvk">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="rootView" destination="Uh1-Zb-b6M" id="NUX-iC-aKW"/>
+                        <outlet property="tv_chooseBuilding" destination="VXv-3e-Uvk" id="ciD-rZ-Yig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czj-Lj-2Wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="515"/>
         </scene>
         <!--Choose Room View Controller-->
         <scene sceneID="Dn1-8P-E0C">
@@ -151,6 +180,7 @@
                     </view>
                     <connections>
                         <segue destination="aPS-82-r3E" kind="modal" identifier="toSelectSchool" id="Jbl-J3-jkO"/>
+                        <segue destination="GZx-Lk-KJT" kind="modal" identifier="toSelectBuilding" id="W1T-6f-Pk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdK-Ip-TEN" userLabel="First Responder" sceneMemberID="firstResponder"/>

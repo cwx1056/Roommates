@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "ChooseSchoolViewController.h"
+#import "ChooseBuildingViewController.h"
 
-@interface ChooseRoomViewController : ViewController <UITextFieldDelegate, ReturnSchoolNameDelegate>
+@interface ChooseRoomViewController : ViewController <UITextFieldDelegate, ReturnSchoolNameDelegate, ReturnBuildingDelegate>
 
 @end

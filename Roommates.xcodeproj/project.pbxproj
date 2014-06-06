@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2101C1F19319CAC00623298 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2101C1E19319CAC00623298 /* SignUpViewController.m */; };
 		B2101C2219331CB800623298 /* ChooseRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2101C2119331CB800623298 /* ChooseRoomViewController.m */; };
+		B214BF0D19365E66004B2DC3 /* ChooseBuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */; };
 		B22B77191935444C00ED2938 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */; };
 		B244C0BA19305B9D002F65F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0B919305B9D002F65F0 /* Foundation.framework */; };
 		B244C0BC19305B9D002F65F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */; };
@@ -52,6 +53,8 @@
 		B2101C1E19319CAC00623298 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		B2101C2019331CB800623298 /* ChooseRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseRoomViewController.h; sourceTree = "<group>"; };
 		B2101C2119331CB800623298 /* ChooseRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseRoomViewController.m; sourceTree = "<group>"; };
+		B214BF0B19365E66004B2DC3 /* ChooseBuildingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseBuildingViewController.h; sourceTree = "<group>"; };
+		B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBuildingViewController.m; sourceTree = "<group>"; };
 		B22B77171935444C00ED2938 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
 		B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSchoolViewController.m; sourceTree = "<group>"; };
 		B244C0B619305B9D002F65F0 /* Roommates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roommates.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +178,8 @@
 				B2101C2119331CB800623298 /* ChooseRoomViewController.m */,
 				B22B77171935444C00ED2938 /* ChooseSchoolViewController.h */,
 				B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */,
+				B214BF0B19365E66004B2DC3 /* ChooseBuildingViewController.h */,
+				B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */,
 				B2B1249D193168AE004552E6 /* Views */,
 				B244C0C019305B9D002F65F0 /* Supporting Files */,
 			);
@@ -324,6 +329,7 @@
 				B244C0CA19305B9D002F65F0 /* AppDelegate.m in Sources */,
 				B22B77191935444C00ED2938 /* ChooseSchoolViewController.m in Sources */,
 				B244C0C619305B9D002F65F0 /* main.m in Sources */,
+				B214BF0D19365E66004B2DC3 /* ChooseBuildingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

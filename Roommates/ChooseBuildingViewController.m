@@ -1,37 +1,39 @@
 //
-//  ChooseSchoolViewController.m
+//  ChooseBuildingViewController.m
 //  Roommates
 //
-//  Created by Zhang Boxuan on 14-5-27.
+//  Created by Zhang Boxuan on 14-5-28.
 //  Copyright (c) 2014年 Boxuan Zhang. All rights reserved.
 //
 
-#import "ChooseSchoolViewController.h"
+#import "ChooseBuildingViewController.h"
 #import <Parse/Parse.h>
 
-@interface ChooseSchoolViewController ()
+@interface ChooseBuildingViewController ()
 
 @property (strong, nonatomic) IBOutlet UIView *rootView;
+@property (weak, nonatomic) IBOutlet UITableView *tv_chooseBuilding;
 
-@property (weak, nonatomic) IBOutlet UITableView *tv_chooseSchool;
-
-@property (strong, nonatomic) NSArray *schoolsAarray;
-@property (strong, nonatomic) NSString *selectedSchoolName;
-@property (strong, nonatomic) NSString *selectedSchoolID;
+@property (strong, nonatomic) NSArray *buildingsAarray;
+@property (strong, nonatomic) NSString *selectedBuildingName;
+@property (strong, nonatomic) NSString *selectedBuildingID;
 
 @property (weak, nonatomic) id delegate;
 
+//get from last view
+@property (strong, nonatomic) NSString *schoolID;
+
 @end
 
-@implementation ChooseSchoolViewController
+@implementation ChooseBuildingViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
     [self prepareDatas];
-    [self.tv_chooseSchool reloadData];
-
+    [self.tv_chooseBuilding reloadData];
+    
 }
 
 - (void)viewDidLoad
@@ -41,14 +43,14 @@
     
     [self.rootView setBackgroundColor:[UIColor colorWithRed:233.0/255.0 green:151.0/255.0 blue:29.0/255.0 alpha:1.0]];
     
-    self.tv_chooseSchool.delegate = self;
-    self.tv_chooseSchool.dataSource = self;
-    self.tv_chooseSchool.backgroundColor = [UIColor clearColor];
-    self.tv_chooseSchool.separatorColor = [UIColor colorWithRed:48.0/255.0 green:69.0/255.0 blue:90.0/255.0 alpha:1.0];
-    [self setExtraCellLineHidden:self.tv_chooseSchool];
+    self.tv_chooseBuilding.delegate = self;
+    self.tv_chooseBuilding.dataSource = self;
+    self.tv_chooseBuilding.backgroundColor = [UIColor clearColor];
+    self.tv_chooseBuilding.separatorColor = [UIColor colorWithRed:48.0/255.0 green:69.0/255.0 blue:90.0/255.0 alpha:1.0];
+    [self setExtraCellLineHidden:self.tv_chooseBuilding];
     
     [self prepareDatas];
-    [self.tv_chooseSchool reloadData];
+    [self.tv_chooseBuilding reloadData];
     
     //cancel button
     UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 500, 160, 30)];
@@ -74,11 +76,12 @@
 
 - (void)prepareDatas
 {
-    PFQuery *schoolQuery = [PFQuery queryWithClassName:@"Schools"];
-    self.schoolsAarray =  [schoolQuery findObjects];
+    PFQuery *buildingQuery = [PFQuery queryWithClassName:@"Buildings"];
+    [buildingQuery whereKey:@"schoolID" equalTo:self.schoolID];
+    self.buildingsAarray =  [buildingQuery findObjects];
     
     //for test
-//    self.schoolsAarray = [NSArray arrayWithObjects:@"北京邮电大学", @"北京师范大学", @"北京航空航天大学", nil];
+//    self.buildingsAarray = [NSArray arrayWithObjects:@"学五", @"学八", @"学十三", nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -86,21 +89,15 @@
     return 1;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-//    return @"选择学校";
-    return nil;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.schoolsAarray count];
+    return [self.buildingsAarray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cellView = [self.tv_chooseSchool dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cellView = [self.tv_chooseBuilding dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if(cellView == nil)
     {
@@ -109,20 +106,20 @@
     
     cellView.backgroundColor = [UIColor clearColor];
     
-    UILabel *l_schoolName = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 40)];
-    PFObject *school = [self.schoolsAarray objectAtIndex:indexPath.row];
-    l_schoolName.text = [school valueForKey:@"schoolName"];
+    UILabel *l_buildingName = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 40)];
+    PFObject *building = [self.buildingsAarray objectAtIndex:indexPath.row];
+    l_buildingName.text = [building valueForKey:@"buildingName"];
     
     //for test
-//    l_schoolName.text = [self.schoolsAarray objectAtIndex:indexPath.row];
+//    l_schoolName.text = [self.buildingsAarray objectAtIndex:indexPath.row];
     
-    l_schoolName.backgroundColor = [UIColor clearColor];
-    l_schoolName.textColor = [UIColor whiteColor];
-    l_schoolName.font = [UIFont boldSystemFontOfSize:18];
+    l_buildingName.backgroundColor = [UIColor clearColor];
+    l_buildingName.textColor = [UIColor whiteColor];
+    l_buildingName.font = [UIFont boldSystemFontOfSize:18];
     
-    [cellView addSubview:l_schoolName];
+    [cellView addSubview:l_buildingName];
     
-    if([l_schoolName.text isEqualToString:self.selectedSchoolName])
+    if([l_buildingName.text isEqualToString:self.selectedBuildingName])
     {
         cellView.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -132,17 +129,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PFObject *school = [self.schoolsAarray objectAtIndex:indexPath.row];
-    self.selectedSchoolName = [school valueForKey:@"schoolName"];
-    self.selectedSchoolID = [school objectId];
-    //for test
-//    self.selectedSchoolName = [self.schoolsAarray objectAtIndex:indexPath.row];
+    PFObject *building = [self.buildingsAarray objectAtIndex:indexPath.row];
+    self.selectedBuildingName = [building valueForKey:@"buildingName"];
+    self.selectedBuildingID = [building objectId];
+//    //for test
+//    self.selectedBuilding = [self.buildingsAarray objectAtIndex:indexPath.row];
     
-    [self.tv_chooseSchool deselectRowAtIndexPath:indexPath animated:YES];
-    [self.tv_chooseSchool reloadData];
+    [self.tv_chooseBuilding deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tv_chooseBuilding reloadData];
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self.delegate returnSchoolName:self.selectedSchoolName SchoolID:self.selectedSchoolID];
+    [self.delegate returnBuildingName:self.selectedBuildingName BuildingID:self.selectedBuildingID];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -164,6 +161,7 @@
     
     return  headerView;
 }
+
 
 /*
 #pragma mark - Navigation

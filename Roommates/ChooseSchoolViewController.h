@@ -14,6 +14,6 @@
 
 @protocol ReturnSchoolNameDelegate
 
-- (void) returnSchoolName:(NSString*)schoolName;
+- (void) returnSchoolName:(NSString*)schoolName SchoolID:(NSString*)schoolID;
 
 @end

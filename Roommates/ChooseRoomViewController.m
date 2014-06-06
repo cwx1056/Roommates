@@ -19,7 +19,8 @@
 @property (strong, nonatomic) UITextField *tf_building;
 @property (strong, nonatomic) UITextField *tf_room;
 
-@property (strong, nonatomic) NSString *schoolName;
+@property (strong, nonatomic) NSString *schoolID;
+@property (strong, nonatomic) NSString *buildingID;
 
 @end
 
@@ -130,6 +131,7 @@
     self.tf_building.leftViewMode = UITextFieldViewModeAlways;
     self.tf_building.leftView.userInteractionEnabled = NO;
     self.tf_building.delegate = self;
+    [self.tf_building addTarget:self action:@selector(clickToSelectBuilding) forControlEvents:UIControlEventTouchDown];
     [self.v_roomInfoInput addSubview:self.tf_building];
     
     self.tf_room = [[UITextField alloc] initWithFrame:CGRectMake(22.0, 164.0, 204.0, 28.0)];
@@ -154,15 +156,44 @@
 
 - (void)clickConfirmButton
 {
-    NSLog(@"Comfirm");
-    
     if(self.tf_name.text.length != 0 && self.tf_school.text.length != 0 && self.tf_building.text.length != 0
        && self.tf_room.text.length != 0)
     {
         PFUser *curUser = [PFUser currentUser];
         
         curUser[@"name"] = self.tf_name.text;
-        curUser[@"roomID"] = @"0nuTs0E1AT";
+//        curUser[@"roomID"] = @"0nuTs0E1AT";
+        
+        //query if the room exists
+        PFQuery *roomQuery = [PFQuery queryWithClassName:@"Rooms"];
+        [roomQuery whereKey:@"schoolID" equalTo:self.schoolID];
+        [roomQuery whereKey:@"buildingID" equalTo:self.buildingID];
+        [roomQuery whereKey:@"Room" equalTo:self.tf_room.text];
+        NSArray *roomsArray = [roomQuery findObjects];
+        
+        if([roomsArray count] != 0)
+        {
+            PFObject *room = [roomsArray firstObject];
+            NSString *roomID = [room objectId];
+            curUser[@"roomID"] = roomID;
+        }else
+        {
+            PFObject *newRoom = [PFObject objectWithClassName:@"Rooms"];
+            newRoom[@"schoolID"] = self.schoolID;
+            newRoom[@"buildingID"] = self.buildingID;
+            newRoom[@"Room"] = self.tf_room.text;
+            
+            [newRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if(!error)
+                {
+                    [newRoom refresh];
+                    curUser[@"roomID"] = [newRoom objectId];
+                }else
+                {
+                    NSLog(@"create room failed");
+                }
+            }];
+        }
         
         [curUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(!error)
@@ -188,6 +219,18 @@
 - (void)clickToSelectSchool
 {
     [self performSegueWithIdentifier:@"toSelectSchool" sender:self];
+}
+
+- (void)clickToSelectBuilding
+{
+    if(self.schoolID != nil)
+    {
+        [self performSegueWithIdentifier:@"toSelectBuilding" sender:self];
+    }else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请先选择学校" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -261,14 +304,33 @@
         id chooseSchoolViewController = segue.destinationViewController;
         [chooseSchoolViewController setValue:self.tf_school.text forKey:@"selectedSchoolName"];
         [chooseSchoolViewController setValue:self forKey:@"delegate"];
+    }else if([segue.identifier isEqualToString:@"toSelectBuilding"])
+    {
+        id chooseBuildingViewController = segue.destinationViewController;
+        [chooseBuildingViewController setValue:self.tf_building.text forKeyPath:@"selectedBuildingName"];
+        [chooseBuildingViewController setValue:self forKeyPath:@"delegate"];
+        [chooseBuildingViewController setValue:self.schoolID forKey:@"schoolID"];
     }
+    
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    self.v_roomInfoInput.frame = CGRectMake(self.v_roomInfoInput.frame.origin.x, 235.0, self.v_roomInfoInput.frame.size.width, self.v_roomInfoInput.frame.size.height);
+    [UIView commitAnimations];
 }
 
-- (void)returnSchoolName:(NSString *)schoolName
+- (void)returnSchoolName:(NSString *)schoolName SchoolID:(NSString *)schoolID
 {
     self.tf_school.text = schoolName;
+    self.schoolID = schoolID;
 }
 
+- (void)returnBuildingName:(NSString *)building BuildingID:(NSString *)buildingID
+{
+    self.tf_building.text = building;
+    self.buildingID = buildingID;
+}
 
 /*
  #pragma mark - Navigation
