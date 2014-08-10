@@ -30,6 +30,12 @@
     [self setTextFields];
 }
 
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:YES];
+//    [self setTextFields];
+//}
+
 - (void)setTextFields
 {
     self.tf_password.delegate = self;
@@ -64,6 +70,7 @@
                                             }else
                                             {
                                                 NSLog(@"login success");
+                                                [self performSegueWithIdentifier:@"segueFromLoginToMain" sender:self];
                                             }
                                         
                                         }else
@@ -108,6 +115,7 @@
     
     if(offset > 0)
     {
+//        CGRect rect = CGRectMake(originFrame.origin.x, originFrame.origin.y - offset, self.v_loginInput.frame.size.width, self.v_loginInput.frame.size.height);
         CGRect rect = CGRectMake(originFrame.origin.x, originFrame.origin.y - offset, self.v_loginInput.frame.size.width, self.v_loginInput.frame.size.height);
         self.v_loginInput.frame = rect;
     }

@@ -11,6 +11,7 @@
 		B2101C2219331CB800623298 /* ChooseRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2101C2119331CB800623298 /* ChooseRoomViewController.m */; };
 		B214BF0D19365E66004B2DC3 /* ChooseBuildingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */; };
 		B22B77191935444C00ED2938 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */; };
+		B235C8901990325300AF74AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B235C88E1990323600AF74AE /* Parse.framework */; };
 		B244C0BA19305B9D002F65F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0B919305B9D002F65F0 /* Foundation.framework */; };
 		B244C0BC19305B9D002F65F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */; };
 		B244C0BE19305B9D002F65F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BD19305B9D002F65F0 /* UIKit.framework */; };
@@ -25,7 +26,6 @@
 		B244C0DB19305B9D002F65F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0BD19305B9D002F65F0 /* UIKit.framework */; };
 		B244C0E319305B9D002F65F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B244C0E119305B9D002F65F0 /* InfoPlist.strings */; };
 		B244C0E519305B9D002F65F0 /* RoommatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B244C0E419305B9D002F65F0 /* RoommatesTests.m */; };
-		B244C0EF19305BB9002F65F0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0EE19305BB9002F65F0 /* Parse.framework */; };
 		B244C0F119305BF2002F65F0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F019305BF2002F65F0 /* AudioToolbox.framework */; };
 		B244C0F319305BF9002F65F0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F219305BF9002F65F0 /* CFNetwork.framework */; };
 		B244C0F519305C08002F65F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0F419305C08002F65F0 /* CoreLocation.framework */; };
@@ -36,6 +36,9 @@
 		B244C0FF19305C2D002F65F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C0FE19305C2D002F65F0 /* StoreKit.framework */; };
 		B244C10119305C36002F65F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B244C10019305C36002F65F0 /* SystemConfiguration.framework */; };
 		B244C10619305F90002F65F0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B244C10519305F90002F65F0 /* LoginViewController.m */; };
+		B264E60C19546AF40002AB39 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E60B19546AF40002AB39 /* MainTabBarController.m */; };
+		B264E60F19546CC80002AB39 /* FuntionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E60E19546CC80002AB39 /* FuntionsViewController.m */; };
+		B264E61219546DBC0002AB39 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E61119546DBC0002AB39 /* MeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseBuildingViewController.m; sourceTree = "<group>"; };
 		B22B77171935444C00ED2938 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
 		B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSchoolViewController.m; sourceTree = "<group>"; };
+		B235C88E1990323600AF74AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B244C0B619305B9D002F65F0 /* Roommates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roommates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B244C0B919305B9D002F65F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,7 +80,6 @@
 		B244C0E019305B9D002F65F0 /* RoommatesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RoommatesTests-Info.plist"; sourceTree = "<group>"; };
 		B244C0E219305B9D002F65F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B244C0E419305B9D002F65F0 /* RoommatesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoommatesTests.m; sourceTree = "<group>"; };
-		B244C0EE19305BB9002F65F0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B244C0F019305BF2002F65F0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B244C0F219305BF9002F65F0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B244C0F419305C08002F65F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -88,6 +91,12 @@
 		B244C10019305C36002F65F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B244C10419305F90002F65F0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B244C10519305F90002F65F0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B264E60A19546AF40002AB39 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		B264E60B19546AF40002AB39 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		B264E60D19546CC80002AB39 /* FuntionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuntionsViewController.h; sourceTree = "<group>"; };
+		B264E60E19546CC80002AB39 /* FuntionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuntionsViewController.m; sourceTree = "<group>"; };
+		B264E61019546DBC0002AB39 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		B264E61119546DBC0002AB39 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B235C8901990325300AF74AE /* Parse.framework in Frameworks */,
 				B244C10119305C36002F65F0 /* SystemConfiguration.framework in Frameworks */,
 				B244C0FF19305C2D002F65F0 /* StoreKit.framework in Frameworks */,
 				B244C0FD19305C23002F65F0 /* Security.framework in Frameworks */,
@@ -106,7 +116,6 @@
 				B244C0F319305BF9002F65F0 /* CFNetwork.framework in Frameworks */,
 				B244C0F119305BF2002F65F0 /* AudioToolbox.framework in Frameworks */,
 				B244C0BE19305B9D002F65F0 /* UIKit.framework in Frameworks */,
-				B244C0EF19305BB9002F65F0 /* Parse.framework in Frameworks */,
 				B244C0BA19305B9D002F65F0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +155,7 @@
 		B244C0B819305B9D002F65F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B235C88E1990323600AF74AE /* Parse.framework */,
 				B244C10019305C36002F65F0 /* SystemConfiguration.framework */,
 				B244C0FE19305C2D002F65F0 /* StoreKit.framework */,
 				B244C0FC19305C23002F65F0 /* Security.framework */,
@@ -155,7 +165,6 @@
 				B244C0F419305C08002F65F0 /* CoreLocation.framework */,
 				B244C0F219305BF9002F65F0 /* CFNetwork.framework */,
 				B244C0F019305BF2002F65F0 /* AudioToolbox.framework */,
-				B244C0EE19305BB9002F65F0 /* Parse.framework */,
 				B244C0B919305B9D002F65F0 /* Foundation.framework */,
 				B244C0BB19305B9D002F65F0 /* CoreGraphics.framework */,
 				B244C0BD19305B9D002F65F0 /* UIKit.framework */,
@@ -168,19 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				B244C0CB19305B9D002F65F0 /* Main.storyboard */,
-				B244C0CE19305B9D002F65F0 /* ViewController.h */,
-				B244C0CF19305B9D002F65F0 /* ViewController.m */,
-				B244C10419305F90002F65F0 /* LoginViewController.h */,
-				B244C10519305F90002F65F0 /* LoginViewController.m */,
-				B2101C1D19319CAC00623298 /* SignUpViewController.h */,
-				B2101C1E19319CAC00623298 /* SignUpViewController.m */,
-				B2101C2019331CB800623298 /* ChooseRoomViewController.h */,
-				B2101C2119331CB800623298 /* ChooseRoomViewController.m */,
-				B22B77171935444C00ED2938 /* ChooseSchoolViewController.h */,
-				B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */,
-				B214BF0B19365E66004B2DC3 /* ChooseBuildingViewController.h */,
-				B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */,
-				B2B1249D193168AE004552E6 /* Views */,
+				B28D13961952C1AE00F6201E /* Login */,
+				B28D139A1952C7F500F6201E /* Main */,
 				B244C0C019305B9D002F65F0 /* Supporting Files */,
 			);
 			path = Roommates;
@@ -218,11 +216,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B2B1249D193168AE004552E6 /* Views */ = {
+		B28D13961952C1AE00F6201E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B244C0CE19305B9D002F65F0 /* ViewController.h */,
+				B244C0CF19305B9D002F65F0 /* ViewController.m */,
+				B244C10419305F90002F65F0 /* LoginViewController.h */,
+				B244C10519305F90002F65F0 /* LoginViewController.m */,
+				B2101C1D19319CAC00623298 /* SignUpViewController.h */,
+				B2101C1E19319CAC00623298 /* SignUpViewController.m */,
+				B2101C2019331CB800623298 /* ChooseRoomViewController.h */,
+				B2101C2119331CB800623298 /* ChooseRoomViewController.m */,
+				B22B77171935444C00ED2938 /* ChooseSchoolViewController.h */,
+				B22B77181935444C00ED2938 /* ChooseSchoolViewController.m */,
+				B214BF0B19365E66004B2DC3 /* ChooseBuildingViewController.h */,
+				B214BF0C19365E66004B2DC3 /* ChooseBuildingViewController.m */,
 			);
-			name = Views;
+			name = Login;
+			sourceTree = "<group>";
+		};
+		B28D139A1952C7F500F6201E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B264E60A19546AF40002AB39 /* MainTabBarController.h */,
+				B264E60B19546AF40002AB39 /* MainTabBarController.m */,
+				B264E60D19546CC80002AB39 /* FuntionsViewController.h */,
+				B264E60E19546CC80002AB39 /* FuntionsViewController.m */,
+				B264E61019546DBC0002AB39 /* MeViewController.h */,
+				B264E61119546DBC0002AB39 /* MeViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,13 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B264E60F19546CC80002AB39 /* FuntionsViewController.m in Sources */,
 				B2101C2219331CB800623298 /* ChooseRoomViewController.m in Sources */,
 				B244C10619305F90002F65F0 /* LoginViewController.m in Sources */,
+				B264E60C19546AF40002AB39 /* MainTabBarController.m in Sources */,
 				B244C0D019305B9D002F65F0 /* ViewController.m in Sources */,
 				B2101C1F19319CAC00623298 /* SignUpViewController.m in Sources */,
 				B244C0CA19305B9D002F65F0 /* AppDelegate.m in Sources */,
 				B22B77191935444C00ED2938 /* ChooseSchoolViewController.m in Sources */,
 				B244C0C619305B9D002F65F0 /* main.m in Sources */,
+				B264E61219546DBC0002AB39 /* MeViewController.m in Sources */,
 				B214BF0D19365E66004B2DC3 /* ChooseBuildingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
