@@ -15,6 +15,7 @@
                           Poster:(NSString*)poster
                          Content:(NSString*)content
                       Background:(NSString*)background
+                       CreatedAt:(NSDate*)createdDate
 {
     self = [super init];
     
@@ -24,6 +25,7 @@
         self.poster = poster;
         self.content = content;
         self.background = background;
+        self.createdDate = createdDate;
     }
     
     return self;
@@ -33,6 +35,7 @@
                         Poster:(NSString*)poster
                        Content:(NSString*)content
                     Background:(NSString*)background
+                     CreatedAt:(NSDate*)createdDate
 {
     self = [super init];
     
@@ -41,6 +44,7 @@
         self.poster = poster;
         self.content = content;
         self.background = background;
+        self.createdDate = createdDate;
     }
     
     return self;

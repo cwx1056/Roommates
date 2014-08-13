@@ -10,18 +10,17 @@
 #import <Parse/Parse.h>
 #import "Sticky.h"
 
-@interface StickyViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iv_stickyBackground;
-@property (weak, nonatomic) IBOutlet UILabel *l_stickyContent;
+@interface StickyViewController ()
 
 @property (strong, nonatomic) PFUser *user;
 @property (strong, nonatomic) NSMutableArray *stickiesArray;
 
+@property (strong, nonatomic) UIScrollView *scrollerView;
+@property (strong, nonatomic) UIPageControl *pageControl;
 @property (nonatomic) CGRect leftViewRect;
 @property (nonatomic) CGRect middleViewRect;
 @property (nonatomic) CGRect rightViewRect;
-
 
 @end
 
@@ -30,12 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.leftViewRect = CGRectMake(-320.0, 144.0, 320.0, 333.0);
-    self.middleViewRect = CGRectMake(0, 144.0, 320.0, 333.0);
-    self.rightViewRect = CGRectMake(320.0, 144.0, 320.0, 333.0);
-    
-    self.l_stickyContent.lineBreakMode = NSLineBreakByWordWrapping;
-    self.l_stickyContent.numberOfLines = 0;
+    self.leftViewRect = CGRectMake(-320.0, 0.0, 320.0, 333.0);
+    self.middleViewRect = CGRectMake(0, 0.0, 320.0, 333.0);
+    self.rightViewRect = CGRectMake(320.0, 0.0, 320.0, 333.0);
     
     [self getUserInfo];
     [self getStickiesFromParse];
@@ -61,31 +57,91 @@
                                                            RoomID:(NSString*)object[@"roomID"]
                                                            Poster:(NSString*)object[@"poster"]
                                                           Content:(NSString*)object[@"content"]
-                                                       Background:(NSString*)object[@"background"]];
+                                                       Background:(NSString*)object[@"background"]
+                                                        CreatedAt:object.createdAt];
                 
                 [self.stickiesArray addObject:sticky];
             }
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        [self showStikyWithIndex:1];
+        
+        //order the results
+        [self.stickiesArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+
+            Sticky *sticky1 = (Sticky*)obj1;
+            Sticky *sticky2 = (Sticky*)obj2;
+            
+            NSComparisonResult result = [sticky1.createdDate compare:sticky2.createdDate];
+            
+            return result == NSOrderedAscending;
+        }];
+        
+        [self showStiky];
     }];
     
     
 }
 
-- (void)showStikyWithIndex:(NSInteger)index
+- (void)showStiky
 {
-    if([self.stickiesArray count] > 0) {
+//    if([self.stickiesArray count] > 0) {
+//        Sticky *stickyToShow = [self.stickiesArray objectAtIndex:index];
+//        StickyView *stickyView = [[StickyView alloc] initWithFrame:CGRectMake(0, 144.0, 320.0, 333.0) Sticky:stickyToShow];
+//        [self.view addSubview:stickyView];
+//    }
+    
+    NSInteger stickyCount = [self.stickiesArray count];
+    
+    if(stickyCount > 0){
+        //init scrollerView
+        self.scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 144.0, 320.0, 333.0)];
+        [self.scrollerView setContentSize:CGSizeMake(320.0 * stickyCount, 333.0)];
+        self.scrollerView.pagingEnabled = YES;
+        self.scrollerView.bounces=NO;
+        self.scrollerView.delegate = self;
+        self.scrollerView.showsHorizontalScrollIndicator=NO;
         
-        Sticky *stickyToShow = [self.stickiesArray objectAtIndex:index];
-        self.iv_stickyBackground.image = [UIImage imageNamed:stickyToShow.background];
-        NSLog(@"%@\n\nby %@", stickyToShow.content, self.user[@"username"]);
-        self.l_stickyContent.text = [NSString stringWithFormat:@"%@\n\nby %@", stickyToShow.content, self.user[@"name"]];
-
+        for(int i = 0; i < stickyCount; i++)
+        {
+            Sticky *stickyToShow = [self.stickiesArray objectAtIndex:i];
+            StickyView *stickyView = [[StickyView alloc] initWithFrame:CGRectMake(i * 320, 0, 320.0, 333.0) Sticky:stickyToShow Index:i];
+            stickyView.delegate = self;
+            [self.scrollerView addSubview:stickyView];
+        }
+        
+        [self.view addSubview:self.scrollerView];
     }
 }
 
+- (void)initScrollerViewAndPageControll
+{
+    //init scrollerView
+    self.scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 144.0, 320.0, 333.0)];
+    [self.scrollerView setContentSize:CGSizeMake(960.0, 333.0)];
+    self.scrollerView.pagingEnabled = YES;
+    self.scrollerView.bounces=NO;
+    self.scrollerView.delegate = self;
+    self.scrollerView.showsHorizontalScrollIndicator=NO;
+    [self.view addSubview:self.scrollerView];
+}
+
+- (void)onPressDeleteButtonOfStickyViewWithIndex:(NSInteger)index{
+    NSLog(@"index=%ld", index);
+    
+    //delete from datebase
+    Sticky *stickyToDelete  = [self.stickiesArray objectAtIndex:index];
+    PFObject *stickyPFToDelete = [PFObject objectWithoutDataWithClassName:@"Sticky" objectId:stickyToDelete.stickyID];
+    [stickyPFToDelete deleteInBackground];
+    
+    //delete sticky from local sticky cache stickiesArray
+    [self.stickiesArray removeObjectAtIndex:index];
+    
+    //refresh scrollerView
+    [self.scrollerView removeFromSuperview];
+    [self initScrollerViewAndPageControll];
+    [self showStiky];
+}
 
 /*
 #pragma mark - Navigation

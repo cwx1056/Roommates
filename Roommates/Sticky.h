@@ -15,16 +15,19 @@
 @property (nonatomic, strong) NSString *poster;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *background;
+@property (nonatomic, strong) NSDate *createdDate;
 
 
 - (instancetype)initWithStickyID:(NSString*)stickyID
                           RoomID:(NSString*)roomID
                           Poster:(NSString*)poster
                          Content:(NSString*)content
-                      Background:(NSString*)background;
+                      Background:(NSString*)background
+                       CreatedAt:(NSDate*)createdDate;
 
 - (instancetype)initWithRoomID:(NSString*)roomID
                         Poster:(NSString*)poster
                        Content:(NSString*)content
-                    Background:(NSString*)background;
+                    Background:(NSString*)background
+                     CreatedAt:(NSDate*)createdDate;
 @end
