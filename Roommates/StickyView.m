@@ -27,12 +27,21 @@
         iv.image = [UIImage imageNamed:sticky.background];
         [self addSubview:iv];
         
-        //add label
-        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(60.0, 66.0, 200.0, 200.0)];
-        l.lineBreakMode = NSLineBreakByWordWrapping;
-        l.numberOfLines = 0;
-        l.text = [NSString stringWithFormat:@"%@\n\nby %@", sticky.content, sticky.poster];
-        [self addSubview:l];
+//        //add label
+//        UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(60.0, 66.0, 200.0, 200.0)];
+//        l.lineBreakMode = NSLineBreakByWordWrapping;
+//        l.numberOfLines = 0;
+//        l.text = [NSString stringWithFormat:@"%@\n\nby %@", sticky.content, sticky.poster];
+//        [self addSubview:l];
+
+        //add textView
+        UITextView *tv = [[UITextView alloc] initWithFrame:CGRectMake(60.0, 66.0, 200.0, 200.0)];
+        tv.text = [NSString stringWithFormat:@"%@\n\nby %@", sticky.content, sticky.poster];
+        tv.backgroundColor = nil;
+        tv.font = [UIFont systemFontOfSize:18.0];
+        [tv setContentInset:UIEdgeInsetsMake(20.0, 0, 0, 0)];
+        tv.editable = NO;
+        [self addSubview:tv];
         
         //add delete Btn
         UIButton *delBtn = [[UIButton alloc] initWithFrame:CGRectMake(36.0, 50.0, 36.0, 36.0)];

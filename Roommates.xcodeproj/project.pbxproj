@@ -42,6 +42,7 @@
 		B2A169D1199A8A3D003B3D98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A169D0199A8A3D003B3D98 /* Images.xcassets */; };
 		B2A169D4199A8F87003B3D98 /* StickyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A169D3199A8F87003B3D98 /* StickyViewController.m */; };
 		B2A169DA199A91F7003B3D98 /* Sticky.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A169D9199A91F7003B3D98 /* Sticky.m */; };
+		B2B5D1D1199C08530045F28F /* NewStickyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B5D1D0199C08530045F28F /* NewStickyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		B2A169D3199A8F87003B3D98 /* StickyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StickyViewController.m; path = Sticky/StickyViewController.m; sourceTree = "<group>"; };
 		B2A169D8199A91F7003B3D98 /* Sticky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sticky.h; sourceTree = "<group>"; };
 		B2A169D9199A91F7003B3D98 /* Sticky.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sticky.m; sourceTree = "<group>"; };
+		B2B5D1CF199C08530045F28F /* NewStickyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStickyViewController.h; sourceTree = "<group>"; };
+		B2B5D1D0199C08530045F28F /* NewStickyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStickyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 				B2A169D9199A91F7003B3D98 /* Sticky.m */,
 				B2583BC4199B2EE700D5793D /* StickyView.h */,
 				B2583BC5199B2EE700D5793D /* StickyView.m */,
+				B2B5D1CF199C08530045F28F /* NewStickyViewController.h */,
+				B2B5D1D0199C08530045F28F /* NewStickyViewController.m */,
 			);
 			name = NoticeBoard;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			files = (
 				B264E60F19546CC80002AB39 /* FuntionsViewController.m in Sources */,
 				B2101C2219331CB800623298 /* ChooseRoomViewController.m in Sources */,
+				B2B5D1D1199C08530045F28F /* NewStickyViewController.m in Sources */,
 				B244C10619305F90002F65F0 /* LoginViewController.m in Sources */,
 				B264E60C19546AF40002AB39 /* MainTabBarController.m in Sources */,
 				B244C0D019305B9D002F65F0 /* ViewController.m in Sources */,

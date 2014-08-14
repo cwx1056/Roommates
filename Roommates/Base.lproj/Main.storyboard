@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A299l" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
@@ -269,15 +270,91 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.58431372549019611" green="0.6470588235294118" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WC8-V4-9kh">
+                    <navigationItem key="navigationItem" title="便利贴" id="WC8-V4-9kh">
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="leu-Z1-Xgp">
+                            <color key="tintColor" red="0.58431372550000005" green="0.64705882349999999" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onPressCloseButton:" destination="WhL-CO-Pto" id="VKb-4B-OJg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1c3-eX-Ni4">
                             <color key="tintColor" red="0.58431372550000005" green="0.64705882349999999" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="W2Q-t7-9EJ" kind="push" id="cfe-T6-l3e"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8Z-kT-xyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1942" y="1310"/>
+        </scene>
+        <!--新建便利贴-->
+        <scene sceneID="uXf-vs-6pa">
+            <objects>
+                <viewController title="新建便利贴" id="W2Q-t7-9EJ" customClass="NewStickyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZBE-8n-H2A"/>
+                        <viewControllerLayoutGuide type="bottom" id="H40-47-s02"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fd9-Ss-PEn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sticky1" translatesAutoresizingMaskIntoConstraints="NO" id="gru-5R-iCV" userLabel="background">
+                                <rect key="frame" x="0.0" y="144" width="320" height="333"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aia-sj-mWz">
+                                <rect key="frame" x="60" y="210" width="200" height="200"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-6q-RWh" userLabel="bg1">
+                                <rect key="frame" x="60" y="485" width="48" height="48"/>
+                                <state key="normal" backgroundImage="sticky1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBackground1:" destination="W2Q-t7-9EJ" eventType="touchUpInside" id="TGK-rm-SCo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-5v-cpY" userLabel="bg2">
+                                <rect key="frame" x="136" y="485" width="48" height="48"/>
+                                <state key="normal" backgroundImage="sticky2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBackground2:" destination="W2Q-t7-9EJ" eventType="touchUpInside" id="yoL-ae-sel"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc4-5v-lQa" userLabel="bg3">
+                                <rect key="frame" x="212" y="485" width="48" height="48"/>
+                                <state key="normal" backgroundImage="sticky3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBackground3:" destination="W2Q-t7-9EJ" eventType="touchUpInside" id="0Ii-St-MaA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58431372549019611" green="0.6470588235294118" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="新建便利贴" id="8We-uY-AJT">
+                        <barButtonItem key="rightBarButtonItem" title="发布" id="xee-U1-BD6">
+                            <color key="tintColor" red="0.58431372550000005" green="0.64705882349999999" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="pressPublishButton:" destination="W2Q-t7-9EJ" id="aav-Zb-Bkd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="iv_stickyBackground" destination="gru-5R-iCV" id="m5l-1z-AY4"/>
+                        <outlet property="tv_input" destination="Aia-sj-mWz" id="buj-q1-E7d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZp-ft-vbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="1310"/>
         </scene>
         <!--Choose Room View Controller-->
         <scene sceneID="Dn1-8P-E0C">
@@ -330,6 +407,9 @@
         <image name="me" width="30" height="30"/>
         <image name="schedual" width="2138" height="2138"/>
         <image name="share" width="2133" height="2133"/>
+        <image name="sticky1" width="640" height="666"/>
+        <image name="sticky2" width="640" height="666"/>
+        <image name="sticky3" width="640" height="666"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

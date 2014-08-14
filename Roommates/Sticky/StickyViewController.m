@@ -11,6 +11,7 @@
 #import "Sticky.h"
 
 
+
 @interface StickyViewController ()
 
 @property (strong, nonatomic) PFUser *user;
@@ -126,32 +127,43 @@
     [self.view addSubview:self.scrollerView];
 }
 
-- (void)onPressDeleteButtonOfStickyViewWithIndex:(NSInteger)index{
-    NSLog(@"index=%ld", index);
-    
+- (void)onPressDeleteButtonOfStickyViewWithIndex:(NSInteger)index{    
     //delete from datebase
     Sticky *stickyToDelete  = [self.stickiesArray objectAtIndex:index];
     PFObject *stickyPFToDelete = [PFObject objectWithoutDataWithClassName:@"Sticky" objectId:stickyToDelete.stickyID];
-    [stickyPFToDelete deleteInBackground];
+    [stickyPFToDelete delete];
     
     //delete sticky from local sticky cache stickiesArray
     [self.stickiesArray removeObjectAtIndex:index];
     
     //refresh scrollerView
+    [self reloadScrollerView];
+}
+
+- (IBAction)onPressCloseButton:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)reloadScrollerView{
+    NSLog(@"reload scrollerView");
+    [self getStickiesFromParse];
+    
     [self.scrollerView removeFromSuperview];
     [self initScrollerViewAndPageControll];
     [self showStiky];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)didReturnStickyView
+{
+    [self reloadScrollerView];
 }
-*/
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NewStickyViewController *dstViewController = segue.destinationViewController;
+    [dstViewController setValue:self forKey:@"delegate"];
+}
 
 @end
 

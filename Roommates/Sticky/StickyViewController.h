@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "StickyView.h"
+#import "NewStickyViewController.h"
 
-@interface StickyViewController : UIViewController <UIScrollViewDelegate, StickyViewDelegate>
+@interface StickyViewController : UIViewController <UIScrollViewDelegate, StickyViewDelegate, NewStickyDelegate>
 
 @end

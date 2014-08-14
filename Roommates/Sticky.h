@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface Sticky : NSObject
 
@@ -28,6 +29,7 @@
 - (instancetype)initWithRoomID:(NSString*)roomID
                         Poster:(NSString*)poster
                        Content:(NSString*)content
-                    Background:(NSString*)background
-                     CreatedAt:(NSDate*)createdDate;
+                    Background:(NSString*)background;
+
+- (PFObject*)toPFObject;
 @end

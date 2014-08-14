@@ -35,7 +35,6 @@
                         Poster:(NSString*)poster
                        Content:(NSString*)content
                     Background:(NSString*)background
-                     CreatedAt:(NSDate*)createdDate
 {
     self = [super init];
     
@@ -44,12 +43,24 @@
         self.poster = poster;
         self.content = content;
         self.background = background;
-        self.createdDate = createdDate;
-    }
+}
     
     return self;
 }
 
+- (PFObject*)toPFObject
+{
+    PFObject *PFObj = [PFObject objectWithClassName:@"Sticky"];
+    
+    if(PFObj){
+        PFObj[@"roomID"] = self.roomID;
+        PFObj[@"poster"] = self.poster;
+        PFObj[@"content"] = self.content;
+        PFObj[@"background"] = self.background;
+    }
+    
+    return PFObj;
+}
 
 
 
