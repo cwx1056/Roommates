@@ -75,7 +75,13 @@
                                         
                                         }else
                                         {
-                                            NSLog(@"login failed");
+                                            NSLog(@"%@", [error userInfo][@"error"]);
+                                            if([error code] == kPFErrorObjectNotFound){
+                                                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                                                                message:@"用户名或密码错误\n请重新输入"
+                                                                                               delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                                                [alert show];
+                                            }
                                             
                                         }
                                     }];

@@ -9,7 +9,6 @@
 #import "MainTabBarController.h"
 
 @interface MainTabBarController ()
-@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @end
 
